@@ -1,0 +1,13 @@
+{
+    "name": "mhanson01/buckeyeart",
+    "description": "BuckeyeArt website",
+    "require": {
+        "twig/twig": "1.*"
+    },
+    "authors": [
+        {
+            "name": "Mark Hanson",
+            "email": "mhanson01@gmail.com"
+        }
+    ]
+}
