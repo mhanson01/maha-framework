@@ -4,6 +4,11 @@
     "require": {
         "twig/twig": "1.*"
     },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
     "authors": [
         {
             "name": "Mark Hanson",
