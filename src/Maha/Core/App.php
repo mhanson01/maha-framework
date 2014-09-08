@@ -8,24 +8,24 @@
 class App {
 
     /**
-     * @var
+     * @var router singleton instance
      */
     public $router;
 
     /**
-     *
+     * @param Router $router
      */
-    function __construct()
+    function __construct(Router $router)
     {
-        $this->responder = new Responder();
+        $this->router = $router;
     }
 
     /**
-     *
+     * Run the main App
      */
     public function run()
     {
-        echo $this->responder->run();
+        echo $this->router->run();
     }
 
 

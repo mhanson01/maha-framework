@@ -17,7 +17,6 @@ class BaseController {
      */
     function __construct()
     {
-
         \Twig_Autoloader::register();
 
         $loader = new \Twig_Loader_Filesystem(__DIR__.'/../../../templates');

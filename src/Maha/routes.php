@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Routes array
+ * Routes configuration
  */
 
-return [
+use Maha\Core\Router;
 
-    'test' => 'home@PagesController'
+$router = Router::Instance();
 
-];
+$router->get('/test', 'PagesController@home');
