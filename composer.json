@@ -1,6 +1,6 @@
 {
-    "name": "mhanson01/buckeyeart",
-    "description": "BuckeyeArt website",
+    "name": "mhanson01/maha-framework",
+    "description": "Maha framework",
     "require": {
         "twig/twig": "1.*"
     },
