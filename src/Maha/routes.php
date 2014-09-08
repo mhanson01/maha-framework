@@ -8,4 +8,4 @@ use Maha\Core\Router;
 
 $router = Router::Instance();
 
-$router->get('/test', 'PagesController@home');
+$router->get('/', 'PagesController@home');

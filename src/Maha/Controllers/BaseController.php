@@ -13,7 +13,8 @@ class BaseController {
     public $viewer;
 
     /**
-     *
+     * todo: utilize variable for template directory
+     * todo: possibly use IoC::make for twig?
      */
     function __construct()
     {
