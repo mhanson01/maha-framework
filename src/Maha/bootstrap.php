@@ -4,7 +4,7 @@ require '../vendor/autoload.php';
 
 set_exception_handler(['Maha\Exceptions\Handler','handle']);
 
-require 'routes.php';
+require routes_path();
 
 // todo: create global file to load configuration and site variables
 //require 'global.php';

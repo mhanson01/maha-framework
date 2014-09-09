@@ -7,7 +7,10 @@
     "autoload": {
         "psr-4": {
             "": "src/"
-        }
+        },
+        "files": [
+            "src/Maha/helpers.php"
+        ]
     },
     "authors": [
         {
