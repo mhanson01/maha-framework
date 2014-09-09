@@ -17,11 +17,4 @@ class PagesController extends BaseController {
         return $this->viewer->render('index.twig', compact('header'));
     }
 
-    public function notFound()
-    {
-        http_response_code(404);
-        
-        return $this->viewer->render('notFound.twig');
-    }
-
 } 
