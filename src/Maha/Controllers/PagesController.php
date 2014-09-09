@@ -19,6 +19,8 @@ class PagesController extends BaseController {
 
     public function notFound()
     {
+        http_response_code(404);
+        
         return $this->viewer->render('notFound.twig');
     }
 
