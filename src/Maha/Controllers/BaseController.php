@@ -1,5 +1,7 @@
 <?php namespace Maha\Controllers;
 
+use Maha\Core\IoC;
+
 /**
  * Class BaseController
  *
@@ -18,13 +20,7 @@ class BaseController {
      */
     function __construct()
     {
-        \Twig_Autoloader::register();
-
-        $loader = new \Twig_Loader_Filesystem(__DIR__.'/../../../templates');
-
-        $twig = new \Twig_Environment($loader);
-
-        $this->viewer = $twig;
+        $this->viewer = IoC::make('viewer');
     }
 
     public function notFound()

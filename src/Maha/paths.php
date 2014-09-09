@@ -2,13 +2,13 @@
 
 return [
 
-    'base' => __DIR__.'/../',
+    'base' => __DIR__.'/../../',
 
-    'public' => __DIR__.'/../public',
+    'public' => __DIR__.'/../../public',
 
-    'templates' => __DIR__.'/../templates',
+    'templates' => __DIR__.'/../../templates',
 
-    'cache' => __DIR__.'/../cache',
+    'cache' => __DIR__.'/../../cache',
 
     'routes' => __DIR__.'/routes.php',
 

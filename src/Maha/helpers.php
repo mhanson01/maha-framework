@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Path Helpers
+ * Filename and Path Helpers
  */
 
 if ( ! function_exists('getPaths'))
@@ -17,14 +17,14 @@ if ( ! function_exists('getPaths'))
     }
 }
 
-if ( ! function_exists('routes_path'))
+if ( ! function_exists('routes_file'))
 {
     /**
      * Return the routes path
      *
      * @return mixed
      */
-    function routes_path()
+    function routes_file()
     {
         $paths = getPaths();
 
