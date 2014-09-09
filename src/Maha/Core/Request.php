@@ -24,8 +24,8 @@ class Request {
     {
         $this->uri = $_SERVER['REQUEST_URI'];
 
-        // todo: set proper request types and utilize with Router
-        $this->method = 'GET';
+        // todo: check for hidden variables to simulate put, patch, delete requests
+        $this->method = $_SERVER['REQUEST_METHOD'];
     }
 
 

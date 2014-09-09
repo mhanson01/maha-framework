@@ -45,14 +45,25 @@ final class Router {
     }
 
     /**
-     * Append new route onto array
+     * Append new route onto GET array
      *
      * @param $uri
      * @param $controllerMethod
      */
     public static function get($uri, $controllerMethod)
     {
-        static::$routes[$uri] = $controllerMethod;
+        static::$routes['GET'][$uri] = $controllerMethod;
+    }
+
+    /**
+     * Append new route onto POST array
+     *
+     * @param $uri
+     * @param $controllerMethod
+     */
+    public static function post($uri, $controllerMethod)
+    {
+        static::$routes['POST'][$uri] = $controllerMethod;
     }
 
     /**
@@ -61,9 +72,9 @@ final class Router {
      */
     public function run()
     {
-        if( $this->routeExists($this->request->uri) )
+        if( $this->routeExists($this->request) )
         {
-            $controllerMethod = explode('@', static::$routes[$this->request->uri]);
+            $controllerMethod = explode('@', static::$routes[$this->request->method][$this->request->uri]);
             $controllerName = $controllerMethod[0];
             $methodName = $controllerMethod[1];
         }
@@ -93,12 +104,12 @@ final class Router {
     }
 
     /**
-     * @param $uri
+     * @param $request
      * @return bool
      */
-    public function routeExists($uri)
+    public function routeExists($request)
     {
-        if (isset(static::$routes[$uri]))
+        if (isset(static::$routes[$request->method][$request->uri]))
         {
             return true;
         }
