@@ -4,72 +4,138 @@
  * Path Helpers
  */
 
-/**
- * Load the paths array
- *
- * @return array
- */
-function getPaths()
+if ( ! function_exists('getPaths'))
 {
-    return require 'paths.php';
+    /**
+     * Load the paths array
+     *
+     * @return array
+     */
+    function getPaths()
+    {
+        return require 'paths.php';
+    }
+}
+
+if ( ! function_exists('routes_path'))
+{
+    /**
+     * Return the routes path
+     *
+     * @return mixed
+     */
+    function routes_path()
+    {
+        $paths = getPaths();
+
+        return $paths['routes'];
+    }
+}
+
+if ( ! function_exists('public_path'))
+{
+    /**
+     * Return the public path
+     *
+     * @return mixed
+     */
+    function public_path()
+    {
+        $paths = getPaths();
+
+        return $paths['public'];
+    }
+}
+
+if ( ! function_exists('cache_path'))
+{
+    /**
+     * Return the cache path
+     *
+     * @return mixed
+     */
+    function cache_path()
+    {
+        $paths = getPaths();
+
+        return $paths['cache'];
+    }
+}
+
+if ( ! function_exists('templates_path'))
+{
+    /**
+     * Return the templates path
+     *
+     * @return mixed
+     */
+    function templates_path()
+    {
+        $paths = getPaths();
+
+        return $paths['templates'];
+    }
+}
+
+if ( ! function_exists('base_path'))
+{
+    /**
+     * Return the base app path
+     *
+     * @return mixed
+     */
+    function base_path()
+    {
+        $paths = getPaths();
+
+        return $paths['base'];
+    }
 }
 
 /**
- * Return the routes path
- *
- * @return mixed
+ * Miscellaneous helpers
  */
-function routes_path()
-{
-    $paths = getPaths();
 
-    return $paths['routes'];
+if ( ! function_exists('dd'))
+{
+    /**
+     * Die and Dump output
+     *
+     * @param $output
+     */
+    function dd($output)
+    {
+        var_dump($output);
+        die();
+    }
 }
 
-/**
- * Return the public path
- *
- * @return mixed
- */
-function public_path()
+if ( ! function_exists('str_random'))
 {
-    $paths = getPaths();
+    /**
+     * Create random string
+     *
+     * @param int $length
+     * @return string
+     */
+    function str_random($length = 32)
+    {
+        $pool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-    return $paths['public'];
+        return substr(str_shuffle(str_repeat($pool, 10)), 0, $length);
+    }
 }
 
-/**
- * Return the cache path
- *
- * @return mixed
- */
-function cache_path()
+if ( ! function_exists('e'))
 {
-    $paths = getPaths();
-
-    return $paths['cache'];
-}
-
-/**
- * Return the templates path
- *
- * @return mixed
- */
-function templates_path()
-{
-    $paths = getPaths();
-
-    return $paths['templates'];
-}
-
-/**
- * Return the base app path
- * 
- * @return mixed
- */
-function base_path()
-{
-    $paths = getPaths();
-
-    return $paths['base'];
+    /**
+     * Run value through html entities with default settings
+     *
+     * @param $value
+     * @return string
+     */
+    function e($value)
+    {
+        return htmlentities($value, ENT_QUOTES, 'UTF-8', false);
+    }
 }
