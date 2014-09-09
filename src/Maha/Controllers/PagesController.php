@@ -12,7 +12,9 @@ class PagesController extends BaseController {
      */
     public function home()
     {
-        return $this->viewer->render('index.twig');
+        $header = 'It\'s working!!';
+
+        return $this->viewer->render('index.twig', compact('header'));
     }
 
 } 
