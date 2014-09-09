@@ -8,8 +8,6 @@
 
 use Maha\Core\IoC;
 
-require '../vendor/autoload.php';
-
 require '../src/Maha/bootstrap.php';
 
 $app = IoC::make('app');

@@ -1,4 +1,5 @@
 <?php  namespace Maha\Core;
+use Maha\Controllers\PagesController;
 
 /**
  * Class Router
@@ -68,8 +69,9 @@ final class Router {
         }
         else
         {
-            echo 'route not found';
-            exit;
+            $controller = new PagesController();
+
+            return $controller->notFound();
         }
 
         if( ! class_exists('Maha\Controllers\\'.$controllerName))
