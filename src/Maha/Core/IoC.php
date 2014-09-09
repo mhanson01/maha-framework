@@ -23,8 +23,8 @@ class IoC {
 
     /**
      * @param $name
+     * @throws \Exception
      * @return mixed
-     * @throws Exception
      */
     public static function make($name)
     {
@@ -35,7 +35,7 @@ class IoC {
             return $resolver();
         }
 
-        throw new Exception('Alias does not exist in the IoC registry.');
+        throw new \Exception('Alias does not exist in the IoC registry.');
     }
 
 } 

@@ -8,7 +8,7 @@
 class App {
 
     /**
-     * @var router singleton instance
+     * @var router instance
      */
     public $router;
 
