@@ -1,6 +1,6 @@
 <?php namespace Maha\Exceptions;
 
-class Handler {
+class ExceptionHandler {
 
     public static function handle(\Exception $e)
     {

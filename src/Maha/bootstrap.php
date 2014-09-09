@@ -2,7 +2,7 @@
 
 require '../vendor/autoload.php';
 
-set_exception_handler(['Maha\Exceptions\Handler','handle']);
+set_exception_handler(['Maha\Exceptions\ExceptionHandler','handle']);
 
 require routes_path();
 
