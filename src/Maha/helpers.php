@@ -139,3 +139,19 @@ if ( ! function_exists('e'))
         return htmlentities($value, ENT_QUOTES, 'UTF-8', false);
     }
 }
+
+/**
+ * Configuration helpers
+ */
+
+function getConfig()
+{
+    return require 'config.php';
+}
+
+function url()
+{
+    $config = getConfig();
+
+    return $config['url'];
+}
