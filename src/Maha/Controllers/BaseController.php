@@ -31,6 +31,6 @@ class BaseController {
     {
         http_response_code(404);
 
-        return $this->viewer->render('notFound.twig');
+        return $this->viewer->render('/errors/404.twig');
     }
 }
