@@ -73,7 +73,7 @@ class Config {
 
         foreach($vars as $key => $value)
         {
-            $_ENV[$key] = $value;
+            putenv($key.'='.$value);
         }
     }
 
