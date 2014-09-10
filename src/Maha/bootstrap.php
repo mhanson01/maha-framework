@@ -6,11 +6,6 @@ set_exception_handler(['Maha\Exceptions\ExceptionHandler','handle']);
 
 require routes_file();
 
-// todo: create global file to load configuration and site variables
-//require 'global.php';
-// todo: create helpers file
-//require 'helpers.php';
-
 use Maha\Core\App;
 use Maha\Core\IoC;
 use Maha\Core\Router;

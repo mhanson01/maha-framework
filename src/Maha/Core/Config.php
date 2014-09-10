@@ -1,5 +1,10 @@
 <?php namespace Maha\Core;
 
+/**
+ * Class Config
+ *
+ * @package Maha\Core
+ */
 class Config {
 
     /**
@@ -7,8 +12,16 @@ class Config {
      */
     private $fileManager;
 
+    /**
+     * Array of paths to look for config files
+     *
+     * @var array
+     */
     protected $paths = [];
 
+    /**
+     * @param FileManager $fileManager
+     */
     function __construct(FileManager $fileManager)
     {
         $this->fileManager = $fileManager;
@@ -20,10 +33,15 @@ class Config {
         $this->loadEnv();
     }
 
+    /**
+     * Load configuration value from config files
+     *
+     * @param $filename
+     * @param $key
+     * @return null
+     */
     public function get($filename, $key)
     {
-        $filename = config_path() . '/'. $filename . '.php';
-
         foreach($this->paths as $path)
         {
             $full_filename = $path . '/' . $filename . '.php';
@@ -39,6 +57,9 @@ class Config {
         return null;
     }
 
+    /**
+     * Load and set environment variables from .env.php
+     */
     private function loadEnv()
     {
         $file = base_path() . '/.env.php';
