@@ -31,6 +31,7 @@ class Request {
     function __construct()
     {
         $this->uri = $_SERVER['REQUEST_URI'];
+
         if( isset($_REQUEST['_method']) and in_array($_REQUEST['_method'], $this->http_methods) )
         {
             $this->method = $_REQUEST['_method'];
@@ -38,7 +39,6 @@ class Request {
         else
         {
             $this->method = $_SERVER['REQUEST_METHOD'];
-
         }
     }
 
