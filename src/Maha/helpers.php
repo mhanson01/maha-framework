@@ -58,6 +58,14 @@ if ( ! function_exists('cache_path'))
     {
         $paths = getPaths();
 
+        /**
+         * Return false if the cache folder is NOT writable
+         */
+        if( ! is_writable($paths['cache']) )
+        {
+            return false;
+        }
+
         return $paths['cache'];
     }
 }
