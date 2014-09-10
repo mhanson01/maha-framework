@@ -13,11 +13,25 @@ class App {
     public $router;
 
     /**
-     * @param Router $router
+     * @var FileManager
      */
-    function __construct(Router $router)
+    public $fileManager;
+
+    /**
+     * @var Config
+     */
+    public $config;
+
+    /**
+     * @param Router      $router
+     * @param FileManager $fileManager
+     * @param Config      $config
+     */
+    function __construct(Router $router, FileManager $fileManager, Config $config)
     {
         $this->router = $router;
+        $this->fileManager = $fileManager;
+        $this->config = $config;
     }
 
     /**

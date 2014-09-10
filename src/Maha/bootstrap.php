@@ -17,7 +17,13 @@ use Maha\Core\Router;
 
 IoC::bind('app', function()
 {
-    return new App(Router::Instance());
+    $router = Router::Instance();
+
+    $fileManager = new \Maha\Core\FileManager();
+
+    $config = new \Maha\Core\Config(new \Maha\Core\FileManager());
+
+    return new App($router, $fileManager, $config);
 });
 
 IoC::bind('viewer', function()

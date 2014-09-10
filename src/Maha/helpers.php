@@ -92,6 +92,21 @@ if ( ! function_exists('base_path'))
     }
 }
 
+if ( ! function_exists('config_path'))
+{
+    /**
+     * Return the config path
+     *
+     * @return mixed
+     */
+    function config_path()
+    {
+        $paths = getPaths();
+
+        return $paths['config'];
+    }
+}
+
 /**
  * Miscellaneous helpers
  */
@@ -146,7 +161,7 @@ if ( ! function_exists('e'))
 
 function getConfig()
 {
-    return require 'config.php';
+    return require __DIR__.'/../../config/app.php';
 }
 
 function url()
