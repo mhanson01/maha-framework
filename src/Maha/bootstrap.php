@@ -27,7 +27,9 @@ IoC::bind('viewer', function()
 
     $loader = new \Twig_Loader_Filesystem( templates_path() );
 
-    $twig = new \Twig_Environment($loader);
+    $twig = new \Twig_Environment($loader, [
+        'cache' => cache_path(),
+    ]);
 
     return $twig;
 });
