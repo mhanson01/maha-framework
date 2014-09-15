@@ -74,9 +74,7 @@ final class Router {
     {
         if( $this->routeExists($this->request) )
         {
-            $controllerMethod = explode('@', static::$routes[$this->request->method][$this->request->uri]);
-            $controllerName = $controllerMethod[0];
-            $methodName = $controllerMethod[1];
+            list($controllerName, $methodName) = explode('@', static::$routes[$this->request->method][$this->request->uri]);
         }
         else
         {
